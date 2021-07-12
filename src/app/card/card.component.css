@@ -1,0 +1,56 @@
+.card {
+    border: 1px dashed #ccc;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    margin-bottom: 8px;
+}
+
+.button-menu p img {
+    float: left;
+}
+
+button {
+    display: block;
+    height: 1.4rem;
+    width: 10rem;
+    margin-bottom: 1rem;
+}
+
+#emojies {
+    font-size: 7rem;
+    display: block;
+}
+
+#emojies {
+    clear: left;
+    margin: 0;
+}
+
+label[for="opinion"] {
+    display: block;
+}
+
+#opinion {
+    width: 9.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.labelOpinion.boldText {
+    font-size: 40px;
+    font-weight: bold;
+}
+.labelOpinion.auto {
+    font-size: auto;
+    font-weight: auto;
+}
+
+.album-desc {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#date {
+    display: block;
+}

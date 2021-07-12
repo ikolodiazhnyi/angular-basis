@@ -1,3 +1,72 @@
-<h2>
-    I'm card component! Updated2!
-</h2>
+<div class="card" *ngFor="let line of lines">
+    <h2>
+        {{ line }}
+    </h2>   
+</div>
+
+<p>Opinion on the album: {{opinion}}</p>
+
+<!-- Using bindings. Show that we use TS by adding [ attribute ]. -->
+<!-- Or we can use interpolation by {{ variable }}  -->
+<div class="button-menu">
+    <p>
+        <img [src]='imgObj.url' width={{imgObj.width}}>
+        <button (click)="addEmoji(parrentTitle)">Add emoji</button>
+        <button (click)="deleteEmoji()">Delete emoji</button>
+    </p>
+</div>
+
+
+<!-- 
+    Create an event-событие with (input) name 
+    Then create a function to resolve the event
+    To pass the event use $(нативный эллемент) sign 
+    The result of event handler function assigne/
+     to opinion variable from CardComponent class
+
+    To display the current value in <input> tag/
+     use bindings and value attribute
+-->
+
+<!-- 
+    The same line but with local link for input element (окальная ссылка)
+    + Use myInput.value as a parameter for event handler
+    <input #myInput (input)="opinion = myInput.value" [value]="opinion" id="opinion">
+    No need use function.
+    
+-->
+
+<!-- 
+    Another way to make "two way binding (" контент меняется от пользовательских действий (input) и/ ") 
+     меняется значение хранящееся в скрипте [value] ") use  
+     <input [(ngModel)]="opinion" id="opinion">
+     use (ngModeleCgange) to get the value of input
+-->
+
+<!-- 
+    There is an opportunity to change style [ngStyle]/
+     and add CSS class to tag [ngClass]
+
+    <label for="opinion" class="labelOpinion" [ngStyle]="{
+    color: opinion.length >= 10 ? 'darkred' : 'black'
+}" [ngClass]="{
+    boldText : bolderText === true,
+    auto: bolderText === false
+}"> SAY IT: </label> 
+-->
+<!-- another option to add class [class.name] -->
+<label for="opinion" class="labelOpinion" 
+[class.boldText]="bolderText === true"
+[class.auto]="bolderText === false" 
+[ngStyle]="{
+    color: opinion.length >= 10 ? 'darkred' : 'black'
+}"
+> SAY IT: </label>
+<input type="text" (input)="opinion = eventHandler($event)" [value]="opinion" id="opinion">
+<button (click)="makeFontBolder()"> {{ buttonText }} </button>
+<div class="album-desc">
+    <em>{{parrentTitle}}</em>
+    <em id="date">{{date | date:'dd MMMM, y '}}</em>
+</div>
+
+<p *ngIf="emojiesUable" id="emojies"> {{parrentTitle}}</p> 

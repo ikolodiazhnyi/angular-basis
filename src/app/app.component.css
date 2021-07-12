@@ -1,0 +1,10 @@
+.container {
+    text-align: center;
+}
+
+#toggle-content {
+    display: block;
+    margin: 0px auto;
+    clear: left;
+}
+

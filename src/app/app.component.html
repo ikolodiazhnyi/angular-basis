@@ -1,1 +1,10 @@
-<app-card></app-card>
+<h1 class="container">''WHOLE LOTTA RED''</h1>
+<div *ngIf="showContent; else hiddenContent">
+    <app-card [parrentTitle]="title"></app-card>    
+</div>
+
+<button id="toggle-content" (click)="toggleContent()">Toggle webpage content</button>
+
+<ng-template #hiddenContent>
+    <!--  when content is hidden this block works -->
+</ng-template>
